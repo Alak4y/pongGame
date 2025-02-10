@@ -1,0 +1,128 @@
+/* Base reset and styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Playpen Sans', cursive;
+    color: #ffffff;
+}
+
+/* Main container */
+.game-container {
+    position: relative;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Canvas styling */
+canvas {
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Game title */
+.game-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 3.5em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #4a90e2;
+}
+
+/* Instructions section */
+.instructions {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.instructions h2 {
+    font-family: 'Satisfy', cursive;
+    color: #4a90e2;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.player-controls {
+    padding: 10px 20px;
+    background: rgba(74, 144, 226, 0.1);
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.player-controls h3 {
+    font-family: 'Satisfy', cursive;
+    color: #4a90e2;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.key {
+    display: inline-block;
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin: 2px;
+    font-family: monospace;
+    color: #fff;
+}
+
+/* Hover effects */
+.key:hover {
+    background: rgba(74, 144, 226, 0.3);
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+}
+
+/* Animations */
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #4a90e2; }
+    50% { text-shadow: 0 0 20px #4a90e2, 0 0 30px #4a90e2; }
+    100% { text-shadow: 0 0 5px #4a90e2; }
+}
+
+.game-title {
+    animation: glow 2s infinite;
+}
+
+/* Responsive design */
+@media (max-width: 850px) {
+    .game-container {
+        padding: 10px;
+    }
+    
+    .game-title {
+        font-size: 2em;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .player-controls {
+        margin: 10px 0;
+    }
+}
